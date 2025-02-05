@@ -5,7 +5,7 @@
     <!ELEMENT to (#PCDATA)>
     <!ELEMENT subject (#PCDATA)>
     <!ELEMENT body (#PCDATA)>
-    <!ELEMENT attachment (#PCDATA)*>
+    <!ELEMENT attachment (#PCDATA)>
 ]>
 
 <message>
