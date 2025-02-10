@@ -3,23 +3,25 @@
     <!ELEMENT business (videogame|address)+>
     <!ELEMENT videogame (title, developer)>
     <!ATTLIST videogame id CDATA #REQUIRED>
+    <!ATTLIST videogame published (yes|no) "no">
     <!ELEMENT title (#PCDATA)>
     <!ELEMENT developer (#PCDATA)>
     <!ELEMENT address (street, free_shipping)>
+    <!ATTLIST address id ID #REQUIRED>
     <!ELEMENT street (#PCDATA)>
     <!ELEMENT free_shipping EMPTY>
 ]>
 
 <business>
-    <videogame id="1">
+    <videogame id="1" published="no">
         <title>Dragon Quest IX</title>
         <developer>Level 5</developer>
     </videogame>
-    <videogame id="2">
+    <videogame id="2" published="yes">
         <title>Minecraft</title>
         <developer>Mojang</developer>
     </videogame>
-    <address>
+    <address id="al">
         <street>Rúa San Clemente</street>
         <free_shipping/>
     </address>

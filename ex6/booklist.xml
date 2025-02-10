@@ -1,0 +1,29 @@
+<!DOCTYPE booklist [
+    <!ELEMENT booklist (book)+>
+    <!ELEMENT book (bookname*,author+,price?,homepage)>
+    <!ELEMENT bookname (#PCDATA)>
+    <!ELEMENT author (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+    <!ELEMENT homepage (#PCDATA)>
+]>
+
+<booklist>
+    <book>
+        <bookname>Alas de Sangre</bookname>
+        <author>Rebecca Yarros</author>
+        <price>22€</price>
+        <homepage>https://www.planetadelibros.com/libro-alas-de-sangre-empireo-1/384147</homepage>
+    </book>
+    <book>
+        <bookname>El último deseo</bookname>
+        <author>Andrzej Sapkowski</author>
+        <homepage>https://www.casadellibro.com/libro-el-ultimo-deseo-saga-geralt-de-rivia-1rustica/9788498891270/11204577?srsltid=AfmBOooy6qvkWQbfmtI-FeHBGaJoO4kFpnB1AqEWaIEm5uLKs-QFqA-R</homepage>
+    </book>
+    <book>
+        <bookname>Laura Dean me ha vuelto a dejar</bookname>
+        <author>Mariko Tamaki</author>
+        <author>Rosemary Valero-O'connell</author>
+        <price>30€</price>
+        <homepage>https://www.lacupula.com/catalogo/laura-dean-me-ha-vuelto-a-dejar/</homepage>
+    </book>
+</booklist>
