@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE message SYSTEM "message.dtd">
+
+<message>
+    <from>a24yaniravc@iessanclemente.net</from>
+    <to>a24test@iessanclemente.net</to>
+    <subject>English homework</subject>
+    <attachment>D:\docs\listening.odt</attachment>
+    <attachment>D:\docs\writting.pdf</attachment>
+    <attachment>D:\docs\reading.odt</attachment>
+</message>
