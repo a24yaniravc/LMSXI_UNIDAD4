@@ -2,7 +2,7 @@
 
 <!DOCTYPE store [
     <!-- Base -->
-    <!ELEMENT store (catalogue, customers, sales)>
+    <!ELEMENT store (catalogue, customers*, sales*)>
 
     <!-- Catalogo -->
     <!ELEMENT catalogue (product+)>
@@ -46,29 +46,47 @@
 
 <store>
     <catalogue>
-        <product idP="P1" EAN="1" VAT="general">
-            <title></title>
-            <brand></brand>
-            <model></model>
-            <price currency="EUR" discount="0"></price>
-            <stock></stock>
+        <product idP="P1" EAN="11111" VAT="reduced">
+            <title>Laptop reacondicionada</title>
+            <brand>HP</brand>
+            <model>EliteBook 840 G4</model>
+            <price currency="EUR" discount="0">366.94</price>
+            <stock>4</stock>
             <reaconditioned/>
+        </product>
+        <product idP="P2" EAN="22222" VAT="general">
+            <title>PC sobremesa - ACER</title>
+            <manufacturer>MediaMarkt</manufacturer>
+            <model>ACER XC-1780</model>
+            <price currency="USD" discount="20">599</price>
+            <stock>20</stock>
         </product>
     </catalogue>
     <customers>
         <customer idC="C1" date_of_creation="10-24-2005">
-            <id_card></id_card>
-            <first_name></first_name>
-            <surnames></surnames>
-            <telephone_number></telephone_number>
-            <postal_address></postal_address>
+            <id_card>123456</id_card>
+            <first_name>Juan</first_name>
+            <surnames>Baltasar Martínez</surnames>
+            <postal_address>12384</postal_address>
+        </customer>
+        <customer idC="C2" date_of_creation="10-24-2010">
+            <id_card>123456</id_card>
+            <complete_name>María Antonia Castro Bonelo</complete_name>
+            <telephone_number>+32 123456789</telephone_number>
+            <postal_address>20109</postal_address>
         </customer>
     </customers>
     <sales>
         <sale date_of_sale="10-24-2005" customer="C1">
-            <product_sold idP="P1" quantity="a"/>
-            <total_price></total_price>
-            <currency></currency>
+            <product_sold idP="P1" quantity="1"/>
+            <product_sold idP="P2" quantity="2"/>
+            <total_price>1325.34</total_price>
+            <currency>EUR</currency>
+        </sale>
+        <sale date_of_sale="5-17-2010" customer="C2">
+            <product_sold idP="P1" quantity="2"/>
+            <total_price>733.88</total_price>
+            <currency>USD</currency>
         </sale>
     </sales>
 </store>
