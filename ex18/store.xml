@@ -1,53 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE store [
+    <!-- Base -->
     <!ELEMENT store (catalogue, customers, sales)>
-    <!ELEMENT catalogue (product*)>
-    <!ELEMENT product (title, brand, model, price, stock, reconditioned)>
-    <!ATTLIST product id ID #REQUIRED>
-    <!ATTLIST product EAN CDATA #IMPLIED>
-    <!ATTLIST product VAT CDATA #IMPLIED>
+
+    <!-- Catalogo -->
+    <!ELEMENT catalogue (product+)>
+    <!ELEMENT product (title, (brand | manufacturer), model, price, stock, reaconditioned*)> <!-- Elemento Producto (elegir entre brand o manufacturer) -->
+    <!ATTLIST product idP ID #REQUIRED> <!-- Atributo idP Producto (obligatorio) -->
+    <!ATTLIST product EAN NMTOKEN #IMPLIED> <!-- Atributo EAN (opcional) -->
+    <!ATTLIST product VAT (general | reduced | super-reduced) #REQUIRED> <!-- Atributo VAT (obligatorio y a elegir entre 3 opciones) -->
     <!ELEMENT title (#PCDATA)>
     <!ELEMENT brand (#PCDATA)>
+    <!ELEMENT manufacturer (#PCDATA)>
     <!ELEMENT model (#PCDATA)>
     <!ELEMENT price (#PCDATA)>
-    <!ATTLIST price currency CDATA #REQUIRED>
-    <!ATTLIST price discount CDATA #IMPLIED>
+    <!ATTLIST price currency (EUR | USD) #REQUIRED> <!-- Atributo divisa (obligatorio y a elegir entre 2 opciones) -->
+    <!ATTLIST price discount NMTOKEN "0"> <!-- Atributo discount (opcional y tiene de defautl "0") -->
     <!ELEMENT stock (#PCDATA)>
-    <!ELEMENT reconditioned (#PCDATA)>
+    <!ELEMENT reaconditioned EMPTY>
+
+    <!-- Clientes -->
     <!ELEMENT customers (customer*)>
-    <!ELEMENT customer (id_card, first_name, surnames, telephone_number, postal_address)>
-    <!ATTLIST customer id ID #REQUIRED>
-    <!ATTLIST customer date_of_creation NMTOKEN #IMPLIED>
-    <!ELEMENT id_card (#PCDATA)>
+    <!ELEMENT customer (id_card, (first_name | complete_name)?, (surnames | complete_name)?, telephone_number*, postal_address?)>  <!-- Elemento cliente (elegir entre first_name y surnames o complete_name) -->
+    <!ATTLIST customer idC ID #REQUIRED> <!-- Atributo IdC Cliente (obligatorio) -->
+    <!ATTLIST customer date_of_creation NMTOKEN #REQUIRED> <!-- Atributo date_of_creation (obligatorio) -->
+    <!ELEMENT id_card (#PCDATA)> 
     <!ELEMENT first_name (#PCDATA)>
     <!ELEMENT surnames (#PCDATA)>
+    <!ELEMENT complete_name (#PCDATA)>
     <!ELEMENT telephone_number (#PCDATA)>
     <!ELEMENT postal_address (#PCDATA)>
+
+    <!-- Ventas -->
     <!ELEMENT sales (sale*)>
-    <!ELEMENT sale (product_sold, total_price, currency)>
-    <!ATTLIST sale date_of_sale NMTOKEN #REQUIRED>
-    <!ATTLIST sale customer IDREF #REQUIRED>
+    <!ELEMENT sale (product_sold+, total_price, currency)>
+    <!ATTLIST sale date_of_sale NMTOKEN #REQUIRED> <!-- Atributo date_of_sale (obligatorio) -->
+    <!ATTLIST sale customer IDREF #REQUIRED> <!-- Atributo Cliente (obligatorio y hace referencia a una ID de cliente ya definida) -->
     <!ELEMENT total_price (#PCDATA)>
     <!ELEMENT currency (#PCDATA)>
     <!ELEMENT product_sold EMPTY>
-    <!ATTLIST product_sold id IDREF #REQUIRED>
-    <!ATTLIST product_sold quantity CDATA #REQUIRED>
+    <!ATTLIST product_sold idP IDREF #REQUIRED> <!-- Atributo idP Producto (obligatorio y hace referencia a una ID de producto ya definida) -->
+    <!ATTLIST product_sold quantity NMTOKEN "1"> <!-- Atributo quantity (opcional y tiene de default "1") -->
 ]>
 
 <store>
     <catalogue>
-        <product id="a" EAN="" VAT="">
+        <product idP="P1" EAN="1" VAT="general">
             <title></title>
             <brand></brand>
             <model></model>
-            <price currency="Euro" discount="Null"></price>
+            <price currency="EUR" discount="0"></price>
             <stock></stock>
-            <reconditioned></reconditioned>
+            <reaconditioned/>
         </product>
     </catalogue>
     <customers>
-        <customer id="a" date_of_creation="a">
+        <customer idC="C1" date_of_creation="10-24-2005">
             <id_card></id_card>
             <first_name></first_name>
             <surnames></surnames>
@@ -56,8 +65,8 @@
         </customer>
     </customers>
     <sales>
-        <sale date_of_sale="a" customer="a">
-            <product_sold id="a" quantity="a"/>
+        <sale date_of_sale="10-24-2005" customer="C1">
+            <product_sold idP="P1" quantity="a"/>
             <total_price></total_price>
             <currency></currency>
         </sale>
