@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE store [
+    <!ELEMENT store (catalogue, customers, sales)>
+    <!ELEMENT catalogue (product*)>
+    <!ELEMENT product (title, brand, model, price, stock, reconditioned)>
+    <!ATTLIST product id ID #REQUIRED>
+    <!ATTLIST product EAN CDATA #IMPLIED>
+    <!ATTLIST product VAT CDATA #IMPLIED>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT brand (#PCDATA)>
+    <!ELEMENT model (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+    <!ATTLIST price currency CDATA #REQUIRED>
+    <!ATTLIST price discount CDATA #IMPLIED>
+    <!ELEMENT stock (#PCDATA)>
+    <!ELEMENT reconditioned (#PCDATA)>
+    <!ELEMENT customers (customer*)>
+    <!ELEMENT customer (id_card, first_name, surnames, telephone_number, postal_address)>
+    <!ATTLIST customer id ID #REQUIRED>
+    <!ATTLIST customer date_of_creation NMTOKEN #IMPLIED>
+    <!ELEMENT id_card (#PCDATA)>
+    <!ELEMENT first_name (#PCDATA)>
+    <!ELEMENT surnames (#PCDATA)>
+    <!ELEMENT telephone_number (#PCDATA)>
+    <!ELEMENT postal_address (#PCDATA)>
+    <!ELEMENT sales (sale*)>
+    <!ELEMENT sale (product_sold, total_price, currency)>
+    <!ATTLIST sale date_of_sale NMTOKEN #REQUIRED>
+    <!ATTLIST sale customer IDREF #REQUIRED>
+    <!ELEMENT total_price (#PCDATA)>
+    <!ELEMENT currency (#PCDATA)>
+    <!ELEMENT product_sold EMPTY>
+    <!ATTLIST product_sold id IDREF #REQUIRED>
+    <!ATTLIST product_sold quantity CDATA #REQUIRED>
+]>
+
+<store>
+    <catalogue>
+        <product id="a" EAN="" VAT="">
+            <title></title>
+            <brand></brand>
+            <model></model>
+            <price currency="Euro" discount="Null"></price>
+            <stock></stock>
+            <reconditioned></reconditioned>
+        </product>
+    </catalogue>
+    <customers>
+        <customer id="a" date_of_creation="a">
+            <id_card></id_card>
+            <first_name></first_name>
+            <surnames></surnames>
+            <telephone_number></telephone_number>
+            <postal_address></postal_address>
+        </customer>
+    </customers>
+    <sales>
+        <sale date_of_sale="a" customer="a">
+            <product_sold id="a" quantity="a"/>
+            <total_price></total_price>
+            <currency></currency>
+        </sale>
+    </sales>
+</store>
