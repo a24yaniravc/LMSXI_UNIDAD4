@@ -1,0 +1,16 @@
+<shiporder orderid="D11" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="shiporder.xsd">
+    <orderperson>Juan Alberto de la Rosa</orderperson>
+    <shipto>
+        <name>Maria José Ramírez Melano</name>
+        <address>r/ 23 Rúa El Pan</address>
+        <city>Madrid</city>
+        <country>Spain</country>
+    </shipto>
+    <item>
+        <title>An old comic book</title>
+        <note>Gwenpool comic, first print</note>
+        <quantity>1</quantity>
+        <price>1000.00</price>
+    </item>
+</shiporder>
