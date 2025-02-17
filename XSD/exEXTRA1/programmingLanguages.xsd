@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="programmingLanguages">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="language" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string" />
+                            <xs:element name="type" type = "validType"/>
+                            <xs:element name="shareOfRespondents" type="xs:string" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="validType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Compiled"/>
+            <xs:enumeration value="Interpreted"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,18 @@
+<programmingLanguages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="programmingLanguages.xsd">
+    <language>
+        <name>Java</name>
+        <type>Compiled</type>
+        <shareOfRespondents>62.3</shareOfRespondents>
+    </language>
+    <language>
+        <name>HTML</name>
+        <type>Interpreted</type>
+        <shareOfRespondents>52.9</shareOfRespondents>
+    </language>
+    <language>
+        <name>Python</name>
+        <type>Compiled</type>
+        <shareOfRespondents>51</shareOfRespondents>
+    </language>
+</programmingLanguages>
