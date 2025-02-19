@@ -1,0 +1,27 @@
+<purchaseOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="purchaseOrder.xsd">
+    <shipTo>
+        <name>Juan Pedro de la Rosa</name>
+        <street>r/ 23 Pan</street>
+        <city>New York</city>
+        <state>New York</state>
+        <zip>07008</zip>
+    </shipTo>
+    <billTo>
+        <name>José Pedro de la Rosa</name>
+        <street>r/ 23 Queso</street>
+        <city>New York</city>
+        <state>New York</state>
+        <zip>07310</zip>
+    </billTo>
+    <comment>For you, brother</comment>
+    <items>
+        <item partNum="255-AS">
+            <productName>Radio</productName>
+            <quantity>1</quantity>
+            <USPrice>200</USPrice>
+            <comment>Our father's old radio</comment>
+            <shipDate>2025-01-02</shipDate>
+        </item>
+    </items>
+</purchaseOrder>
