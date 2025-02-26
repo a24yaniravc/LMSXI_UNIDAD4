@@ -1,0 +1,23 @@
+<!DOCTYPE order SYSTEM "order.dtd">
+
+<order>
+    <tractor>
+        <component manufacturer_name="Juanjo's Tools" fragile="no">
+            <delivery_date>2010-10-02</delivery_date>
+            <weight unit="kilos">10</weight>
+            <serial_number>12345678</serial_number>
+            <max_km></max_km>
+        </component>
+        <component manufacturer_name="Pepe's tools" fragile="yes">
+            <weight unit="grams">50</weight>
+        </component>
+    </tractor>
+    <tractor>
+        <component manufacturer_name="Pepe's tools" fragile="yes">  
+            <delivery_date>2010-10</delivery_date>
+            <weight unit="grams">20</weight>
+            <serial_number>12341234</serial_number>
+            <max_km>20</max_km>
+        </component>
+    </tractor>
+</order>
